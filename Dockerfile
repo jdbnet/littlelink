@@ -1,5 +1,5 @@
 # Original image
-FROM timothystewart6/littlelink-server:latest
+FROM ghcr.io/techno-tim/littlelink-server:latest
 
 # Set environment variables
 ENV AVATAR_2X_URL="https://assets.jdbnet.co.uk/linktree/logo-400x400.png"
