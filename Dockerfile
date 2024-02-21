@@ -36,6 +36,7 @@ ENV STEAM="https://l.jdbnet.co.uk/steam"
 ENV THEME="Dark"
 ENV X="https://l.jdbnet.co.uk/x"
 ENV REDDIT="https://l.jdbnet.co.uk/reddit"
+ENV KIT="https://l.jdbnet.co.uk/kit"
 
 # Set working directory
 WORKDIR /usr/src/app
