@@ -7,7 +7,7 @@ ENV AVATAR_ALT="JDB-NET"
 ENV AVATAR_URL="https://assets.jdbnet.co.uk/linktree/logo-200x200.png"
 ENV BIO="The home of JDB-NET"
 ENV CUSTOM_BUTTON_ALT_TEXT="Docs,Status,Fireshare"
-ENV CUSTOM_BUTTON_COLOR="#828181,#006400,#ff00bf"
+ENV CUSTOM_BUTTON_COLOR="#828181,#006400,#a505f5"
 ENV CUSTOM_BUTTON_ICON="fas fa-file-lines,fas fa-signal, fas fa-gamepad"
 ENV CUSTOM_BUTTON_NAME="Docs,Status,Fireshare"
 ENV CUSTOM_BUTTON_TEXT="Docs,Status,Fireshare"
@@ -34,7 +34,8 @@ ENV OG_URL="https://www.jdbnet.co.uk"
 ENV SPOTIFY="https://l.jdbnet.co.uk/spotify"
 ENV STEAM="https://l.jdbnet.co.uk/steam"
 ENV THEME="Dark"
-ENV TWITTER="https://l.jdbnet.co.uk/twitter"
+ENV X="https://l.jdbnet.co.uk/x"
+ENV REDDIT="https://l.jdbnet.co.uk/reddit"
 
 # Set working directory
 WORKDIR /usr/src/app
