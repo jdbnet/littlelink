@@ -1,6 +1,9 @@
 # Original image
 FROM ghcr.io/techno-tim/littlelink-server:latest
 
+# Install curl for healthcheck
+RUN apk add --no-cache curl
+
 # Set environment variables
 ENV AVATAR_2X_URL="https://assets.jdbnet.co.uk/linktree/logo-400x400.png"
 ENV AVATAR_ALT="JDB-NET"
