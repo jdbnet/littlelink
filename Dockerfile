@@ -44,5 +44,9 @@ WORKDIR /usr/src/app
 # Expose any necessary ports
 EXPOSE 3000
 
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl --fail http://localhost:3000 || exit 1
+
 # Define the command to run when the container starts
 CMD [ "node", "build/server.js" ]
