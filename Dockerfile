@@ -40,6 +40,7 @@ ENV THEME="Dark"
 ENV X="https://l.jdbnet.co.uk/x"
 ENV REDDIT="https://l.jdbnet.co.uk/reddit"
 ENV KIT="https://l.jdbnet.co.uk/kit"
+ENV MASTODON="https://social.jdbnet.co.uk/@jdbnet"
 
 # Set working directory
 WORKDIR /usr/src/app
