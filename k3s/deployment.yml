@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: littlelink-production
+  namespace: littlelink-production
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: littlelink-production
+  template:
+    metadata:
+      labels:
+        app: littlelink-production
+    spec:
+      containers:
+        - name: littlelink-production
+          image: ghcr.io/jdbnet/littlelink:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              name: "littlelink"
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          startupProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: littlelink-production-ingress-service
+  namespace: littlelink-production
+spec:
+  selector:
+    app: littlelink-production
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: littlelink-production-ingress
+  namespace: littlelink-production
+spec:
+  rules:
+  - host: www.jdbnet.co.uk
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: littlelink-production-ingress-service
+            port:
+              number: 80
+  - host: jdbnet.co.uk
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: littlelink-production-ingress-service
+            port:
+              number: 80
