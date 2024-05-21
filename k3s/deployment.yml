@@ -4,7 +4,7 @@ metadata:
   name: littlelink-production
   namespace: littlelink-production
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: littlelink-production
